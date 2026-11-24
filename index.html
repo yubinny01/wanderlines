@@ -1096,6 +1096,52 @@ footer.credits{font-family:var(--mono);font-size:9px;letter-spacing:.04em;color:
 .adm.a1{stroke-width:.55;stroke-opacity:.35}
 .adm.sgg{stroke-width:.5;stroke-opacity:.38}
 .adm.sido{stroke-width:.85;stroke-opacity:.55}
+/* HOW IT WORKS: 그림 카드 8장 (한눈에) */
+.howgrid{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;counter-reset:none}
+.howgrid li{display:flex;flex-direction:column;gap:6px;border:1px solid var(--ink);border-radius:12px;padding:10px 10px 12px;background:#fff;min-width:0}
+.howgrid .hpic{height:84px;display:flex;align-items:center;justify-content:center;background:#fbf6f7;border-radius:8px;overflow:hidden}
+.howgrid .hpic>svg{width:100%;height:100%}
+.howgrid b.mono{margin:2px 0 0}
+.howgrid p{margin:0;font-size:12px;line-height:1.5;color:var(--ink);word-break:keep-all}
+.howgrid .kw{font-style:normal;font-weight:800;color:var(--pink-d)}
+.hcard{position:relative;width:88%;height:70px;background:#fff;border:1px solid var(--ink);border-radius:5px;padding:4px 6px;display:flex;flex-direction:column;gap:1px;background-image:repeating-linear-gradient(#fff 0 13px,#eadfe2 13px 14px)}
+.hcard .hl{font-size:6.5px;line-height:13px;white-space:nowrap;letter-spacing:.02em;color:var(--ink)}
+.hcard .hl i{font-style:normal;color:#8a7f84}
+.hcard .hl:first-child{color:var(--pink)}
+.hcard .hst{color:#d94f72;font-size:7px}
+.hcard .hsp{position:absolute;right:5px;top:5px;width:24px}
+.hcard .hsp svg{width:100%;height:auto;display:block}
+.hcard .hph{position:absolute;right:6px;bottom:6px;width:26px;height:20px;border-radius:2px;background:linear-gradient(160deg,#ffd2b3,#f29bb2 55%,#8fb8e8);border:1px solid var(--ink)}
+.hstamps{display:flex;align-items:center;justify-content:center}
+.hstamps span{width:38px;margin:0 -4px;transform:rotate(var(--r));filter:drop-shadow(0 2px 2px rgba(0,0,0,.12))}
+.hstamps svg{width:100%;height:auto;display:block}
+.hrow{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;height:100%}
+.hrow .hpm{width:46px;height:62px;display:flex}
+.hrow .hpm svg{width:100%;height:100%}
+.hrow .hfly{width:34px;height:18px}
+.hrow .hmb{width:24px}
+.hrow .hmb.big{width:30px}
+.hrow .hmb svg{width:100%;height:auto;display:block}
+.hdress{gap:0}
+.hdress .hpm{width:44px}
+.hcol{display:flex;flex-direction:column;align-items:center;width:100%;height:100%;padding:4px 0}
+.hcol svg{width:84%;height:44px}
+.hshade{display:flex;gap:4px}
+.hshade span{display:flex;flex-direction:column;align-items:center;width:15px}
+.hshade svg{width:100%;height:auto}
+.hshade b{font-size:6px;color:var(--ink);letter-spacing:0;font-weight:400}
+.hmini{width:44px;height:54px;border:1px solid var(--ink);border-radius:4px;background:#fff;padding:4px;display:flex;flex-direction:column;gap:4px}
+.hmini span{font-size:5.5px;color:var(--pink);letter-spacing:.02em}
+.hmini i{display:block;height:1px;background:#eadfe2}
+@media (max-width:760px){.howgrid{grid-template-columns:repeat(2,1fr)}}
+
+.howgrid li{align-items:stretch;background:#fff}
+.howgrid li:nth-child(4){background:#fff}
+.howgrid .hpic{width:100%}
+.howgrid p{white-space:normal}
+.hcard{width:132px;max-width:92%}
+.hcard .hsp{width:20px;right:4px;top:4px}
+.hcard .hph{width:22px;height:16px}
 
 </style>
 </head>
@@ -1139,7 +1185,6 @@ footer.credits{font-family:var(--mono);font-size:9px;letter-spacing:.04em;color:
     <div class="menu" id="menu" hidden>
       <div class="mlabel">INFO</div>
       <button id="mAbout">ⓘ ABOUT</button>
-      <button id="mTips">↺ SHOW TIPS</button>
       <div class="mlabel">DATA</div>
       <button id="mExport">↓ EXPORT BACKUP</button>
       <button id="mImport">↑ IMPORT BACKUP</button>
@@ -1177,7 +1222,7 @@ footer.credits{font-family:var(--mono);font-size:9px;letter-spacing:.04em;color:
     <div class="apage" data-p="2" hidden>
       <span class="mono">[ HOW TO USE ]</span>
       <h2>HOW IT<br>WORKS</h2>
-      <ol class="howgrid"><li><span class="hico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.8 5.2 3.8 8.5s-1.2 6.1-3.8 8.5c-2.6-2.4-3.8-5.2-3.8-8.5S9.4 5.9 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b class="mono">01 · PICK A PLACE</b><p>나라를 누르거나 검색하기<br>한국은 동네 단위까지</p></div></li><li><span class="hico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="14.5" y="8" width="4" height="5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10h6M6 13h5M6 16h4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b class="mono">02 · WRITE</b><p>사진·기분(별점)·그날 환율까지<br>그 나라 국화 우표를 붙여서</p></div></li><li><span class="hico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11a4 4 0 0 1 8 0v8H5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 11h6v8h-6M9 19v3M16 7V3h3v2h-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b class="mono">03 · DELIVER</b><p>배달부가 직접 날아가 배달<br>지구본 위에 우체통이 하나</p></div></li><li><span class="hico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="15.5" r="3" fill="var(--pink)" stroke="currentColor" stroke-width="1.2"/></svg></span><div><b class="mono">04 · SEAL</b><p>도착일을 정해 봉인하기<br>그날 배달부가 다시 가져다줌</p></div></li><li><span class="hico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b class="mono">05 · COLLECT</b><p>엽서마다 편지지가 차곡차곡<br>배달부를 눌러 새 옷 열기</p></div></li><li><span class="hico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12.6l1 2 2.2.3-1.6 1.5.4 2.2-2-1-2 1 .4-2.2-1.6-1.5 2.2-.3z" fill="var(--pink)" stroke="currentColor" stroke-width="1"/></svg></span><div><b class="mono">06 · REMEMBER</b><p>궁금할 때 그곳을 누르면<br>사진·기분·환율이 그대로</p></div></li></ol>
+      <ol class="howgrid" id="howGrid"></ol>
       <div class="afoot"><button class="btn ghost" id="aboutBack">← BACK</button><div class="adots" aria-hidden="true"><i></i><i class="on"></i></div><button class="btn primary" id="aboutGo">START <span class="arr">→</span></button></div>
     </div>
   </div>
@@ -2954,6 +2999,39 @@ function drawComic() {
 }
 drawComic();
 
+/* HOW IT WORKS: 기능마다 그림 한 장 + 한 줄 (핵심 단어는 진한 분홍 굵게) */
+function drawHow() {
+  const el = $('#howGrid'); if (!el) return;
+  const k = w => `<em class="kw">${w}</em>`;
+  const ink = '#3a2e2a';
+  const globe = `<svg viewBox="0 0 120 80"><circle cx="60" cy="40" r="32" fill="#fff" stroke="${ink}" stroke-width="1.4"/><ellipse cx="60" cy="40" rx="14" ry="32" fill="none" stroke="${ink}" stroke-width=".8" opacity=".5"/><path d="M28 40h64M33 24h54M33 56h54" stroke="${ink}" stroke-width=".8" opacity=".5"/><path d="M48 26c6-4 14-3 18 2s-2 9-8 9-14-5-10-11z" fill="var(--pink)" stroke="${ink}" stroke-width="1"/><g transform="translate(66 14)"><rect x="0" y="0" width="34" height="13" rx="6.5" fill="#fff" stroke="${ink}"/><circle cx="7" cy="6.5" r="2.6" fill="none" stroke="${ink}"/><path d="M9 8.5l2.2 2.2" stroke="${ink}"/><path d="M14 6.5h15" stroke="${ink}" stroke-width=".8" opacity=".5"/></g></svg>`;
+  const card = `<div class="hcard"><span class="hl mono">POST CARD</span><span class="hl mono"><i>FROM.</i> OSAKA · 11.24</span><span class="hl mono"><i>RATE.</i> 100¥ = 845₩</span><span class="hl hst">★★★★☆</span><span class="hph"></span><span class="hsp">${stampSVG('392')}</span></div>`;
+  const stamps = `<div class="hstamps">${['724', '392', '410'].map((c, i) => `<span style="--r:${[-9, 2, 11][i]}deg">${stampSVG(c)}</span>`).join('')}</div>`;
+  const deliver = `<div class="hrow"><span class="hpm">${postmanSVG('summer', { look: LOOK_DEFAULT, expr: 'happy', stickers: [], noTag: true })}</span><svg class="hfly" viewBox="0 0 40 20"><path d="M2 16c10-14 24-14 36-4" fill="none" stroke="${ink}" stroke-width="1.2" stroke-dasharray="3 3"/><path d="M33 8l5 4-6 2" fill="none" stroke="${ink}" stroke-width="1.2"/></svg><span class="hmb">${PIN_SVG(MOOD.r5.c)}</span></div>`;
+  const shades = [1, 2, 3, 4, 5].map(n => MOOD['r' + n].c);
+  const color = `<div class="hcol"><svg viewBox="0 0 120 56"><path d="M8 30c6-14 22-20 36-14s10 22-4 28-38 0-32-14z" fill="${shades[3]}" stroke="${ink}" stroke-width="1"/><path d="M62 14c14-6 34-2 44 10s0 26-16 24-36-4-34-18 0-12 6-16z" fill="#fff" stroke="${ink}" stroke-width="1"/><path d="M70 20c8-4 20-2 26 6s-2 16-12 14-18-4-18-10 0-8 4-10z" fill="${shades[1]}" stroke="none"/></svg><div class="hshade">${shades.map((c, i) => `<span>${PIN_SVG(c)}<b class="mono">★${i + 1}</b></span>`).join('')}</div></div>`;
+  const seal = `<svg viewBox="0 0 120 80"><rect x="22" y="18" width="76" height="48" rx="3" fill="#fff" stroke="${ink}" stroke-width="1.4"/><path d="M22 20l38 26 38-26" fill="none" stroke="${ink}" stroke-width="1.4"/><circle cx="60" cy="46" r="10" fill="var(--pink)" stroke="${ink}" stroke-width="1.2"/><path d="M60 51c-5-3.4-7-5.6-7-8a3.4 3.4 0 0 1 7-1.2 3.4 3.4 0 0 1 7 1.2c0 2.4-2 4.6-7 8z" fill="#fff"/><g transform="translate(78 4)"><rect width="34" height="16" rx="3" fill="#fff" stroke="${ink}"/><text x="17" y="11" text-anchor="middle" font-size="7.5" font-family="monospace" fill="${ink}">D-30</text></g></svg>`;
+  const looks = [
+    ['dog', 'summer', LOOK_DEFAULT],
+    ['penguin', 'sailor', { ...LOOK_DEFAULT, animal: 'penguin', fur: FUR_BY.penguin[0], hat: 'beret' }],
+    ['monkey', 'frog', { ...LOOK_DEFAULT, animal: 'monkey', fur: FUR_BY.monkey[0], eyes: 'happy', hat: 'none' }],
+  ];
+  const dress = `<div class="hrow hdress">${looks.map(([, o, L]) => `<span class="hpm">${postmanSVG(o, { look: L, stickers: [], noTag: true })}</span>`).join('')}</div>`;
+  const remember = `<div class="hrow"><span class="hmb big">${PIN_SVG(shades[3])}</span><svg class="hfly" viewBox="0 0 40 20"><path d="M4 10h30" fill="none" stroke="${ink}" stroke-width="1.2" stroke-dasharray="3 3"/><path d="M30 6l5 4-5 4" fill="none" stroke="${ink}" stroke-width="1.2"/></svg><div class="hmini"><span class="mono">1 YEAR AGO</span><i></i><i></i><i></i></div></div>`;
+  const items = [
+    ['PICK A PLACE', globe, `나라를 누르거나 검색하기<br>한국은 동네까지`],
+    ['WRITE', card, `${k('사진')} · ${k('기분')} · 그날 ${k('환율')}을<br>엽서 한 장에`],
+    ['STAMP', stamps, `나라마다 다른<br>${k('국화 우표')}가 붙어요`],
+    ['DELIVER', deliver, `배달부가 ${k('직접 날아가')}<br>${k('우체통')}을 세워요`],
+    ['COLOR', color, `다녀온 나라는 ${k('색칠')}<br>${k('기분')}이 좋을수록 진하게`],
+    ['SEAL', seal, `${k('도착일')}을 정해 봉인<br>그날 다시 배달돼요`],
+    ['DRESS UP', dress, `엽서로 편지지를 모아<br>캐릭터에 ${k('새 옷')}을`],
+    ['REMEMBER', remember, `${k('우체통')}을 누르면<br>그날의 엽서가 그대로`],
+  ];
+  el.innerHTML = items.map(([t, pic, d], i) => `<li><div class="hpic" aria-hidden="true">${pic}</div><b class="mono">${String(i + 1).padStart(2, '0')} · ${t}</b><p>${d}</p></li>`).join('');
+}
+drawHow();
+
 /* ---------- 기능 팁: 각 기능 옆에 말풍선처럼 떠서 알려 줘요 (× 로 닫으면 다시 안 나와요) ---------- */
 const TIPS = {
   globe: { text: 'Tap a country you visited\nto write yourself a postcard.', at: () => { const r = $('#globeWrap').getBoundingClientRect(); return { left: r.left + r.width / 2 - 1, top: r.top + r.height * .5, width: 2, height: 2 }; }, place: 'top' },
@@ -2993,7 +3071,8 @@ function doneTip(id) {
   markTip(id); tipQ = tipQ.filter(x => x !== id);
   if (tipId === id && tipEl) { tipEl.remove(); tipEl = null; tipId = null; setTimeout(showNextTip, 250); }
 }
-function queueTips(ids, now) {
+function queueTips(ids, now) { return false;   // 기능 설명은 HOW IT WORKS 한 장으로 모았어요
+
   ids = ids.filter(id => !tipSeen(id)); if (!ids.length) return false;
   if (now && tipEl) { tipQ.unshift(tipId); tipEl.remove(); tipEl = null; tipId = null; }
   tipQ = now ? [...ids, ...tipQ.filter(x => !ids.includes(x))] : [...tipQ, ...ids.filter(x => !tipQ.includes(x))];
@@ -3001,7 +3080,8 @@ function queueTips(ids, now) {
 }
 addEventListener('resize', placeTip);
 // 엽서 쓰기 창 안의 팁: 해당 칸 바로 아래에 붙어요
-function inlineTip(id, afterEl, text) {
+function inlineTip(id, afterEl, text) { return;
+
   if (tipSeen(id) || !afterEl) return;
   const d = document.createElement('div'); d.className = 'coach inline in'; d.setAttribute('role', 'note');
   d.innerHTML = `<span class="mono">TIP</span><p></p><button class="cx" type="button" aria-label="팁 닫기">×</button>`;
@@ -4032,11 +4112,6 @@ $('#aboutX').onclick = closeAbout;
 $('#about').addEventListener('click', e => { if (e.target.id === 'about') closeAbout(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#about').hidden) closeAbout(); });
 $('#mAbout').onclick = () => { menu.hidden = true; openAbout(); };
-$('#mTips').onclick = () => {
-  menu.hidden = true; S.settings.tipsSeen = {}; saveSettings(); speechOff = false; updateSpeech();
-  if (tipEl) { tipEl.remove(); tipEl = null; tipId = null; } tipQ = [];
-  queueTips(['globe', 'search', 'more']); toast('Tips are back on');
-};
 $('.logo').onclick = openAbout;
 $('.logo').onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openAbout(); } };
 const menu = $('#menu');
